@@ -1,0 +1,11 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.darktext {
+    background-color:bisque;
+    color: rgb(42, 42, 42);
+    padding: 1em;
+    width: 30%;
+    margin: auto;
+}
