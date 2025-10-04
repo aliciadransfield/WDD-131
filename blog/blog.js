@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="books">
           <h2>${item.title}</h2>
           <img src="${item.imgSrc}" alt="${item.imgAlt}">
-          <p>${item.description} <a href="#" class="read-more">Read More...</a></p>
+          <p>${item.description} <a href="#" class="read-more"> Read More...</a></p>
         </div>
       </article>
     `;
