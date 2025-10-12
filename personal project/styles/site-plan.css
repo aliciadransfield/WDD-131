@@ -2,32 +2,30 @@
 Any spaces in your font name should be replaced with a +. 
 Fonts are separated by a | */
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Lora:ital,wght@0,400..700;1,400..700&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
   /* change the values below to your colors from your palette */
-  --primary-color: #63c3ec;
-  --secondary-color: #faf195;
-  --accent1-color: #e32457;
-  --accent2-color: #231f20;
+--primary-color: #75caf5;
+--secondary-color: #EACD2B;
+--accent1-color: #C0392B;
+--accent2-color: #1C1D22;
 
   /* change the values below to your chosen font(s) */
-  --heading-font: "IM Fell French Canon SC";
-  --paragraph-font: Lato, Helvetica, sans-serif;
+  --heading-font: "Comic Neue", "Lato", sans-serif;
+  --paragraph-font: "Quicksand", Helvetica, sans-serif;
 
   /* these colors below should be chosen from among your palette colors above */
-  --headline-color-on-white: var(
-    --primary-color
-  ); /* headlines on a white background */
-  --headline-color-on-color: white; /* headlines on a colored background */
-  --paragraph-color-on-white: var(
-    --primary-color
-  ); /* paragraph text on a white background */
-  --paragraph-color-on-color: white; /* paragraph text on a colored background */
+  --headline-color-on-white: var(--accent1-color);
+  --headline-color-on-color:var(--accent2-color);
+  --paragraph-color-on-white: var(--accent1-color);
+  --paragraph-color-on-color: var(--accent2-color); 
   --paragraph-background-color: var(--primary-color);
-  --nav-link-color: var(--primary-color);
-  --nav-background-color: var(--secondary-color);
+  --nav-link-color: var(--accent2-color);
+  --nav-background-color: var(--primary-color);
   --nav-hover-link-color: white;
-  --nav-hover-background-color: var(--primary-color);
+  --nav-hover-background-color: var(--accent1-color);
 }
 
 /*  Look around below...but DON'T CHANGE ANYTHING! */
@@ -57,7 +55,7 @@ h2 {
 hr {
   height: 3px;
   margin: 35px 0;
-  background: var(--accent1-color);
+  background: var(--secondary-color);
 }
 header {
   padding: 1em;
@@ -109,6 +107,7 @@ p.colored {
 
 nav {
   background-color: var(--nav-background-color);
+  font-family: var(--heading-font);
   line-height: 3em;
   text-align: center;
   font-size: 1.2em;
@@ -178,4 +177,8 @@ nav a:hover {
   grid-area: right;
   border-top: 1px solid;
   border-right: 1px solid;
+}
+
+img {
+  max-width: 300px;
 }
