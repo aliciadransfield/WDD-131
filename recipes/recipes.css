@@ -135,7 +135,7 @@ footer img {
     margin: 0 0.3rem;
 }
 
-@media (min-width: 700px) {
+@media (min-width: 600px) {
   .recipes {
     justify-content: center;
   }
@@ -169,7 +169,7 @@ footer img {
 
   footer {
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-items: right;
     text-align: left;
     width: 90%;
