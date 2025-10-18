@@ -293,7 +293,7 @@ console.log(getRandomList(recipes));
 
 function recipeTemplate(recipe) {
 	return `<figure class="recipe">
-		<img src="images/${recipe.image}" alt="Image of ${recipe.name}" />
+		<img src="images/${recipe.image}" alt="Image of ${recipe.name}" fetchpriority="high"/>
 		<figcaption>
 			<ul class="recipe_tags">
 				${recipe.tags.map(tag => `<li>${tag}</li>`).join('')}
