@@ -61,6 +61,12 @@ button img {
     width: 20px;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+}
+
 .recipes {
     display: flex;
     flex-direction: column;
