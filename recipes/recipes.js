@@ -279,3 +279,90 @@ const recipes = [
 		rating: 4
 	}
 ]
+
+function random(num) {
+	return Math.floor(Math.random()*num)
+}
+
+function getRandomList(list) {
+	const listLength = list.length;
+	const randomNum = random(listLength);
+	return list[randomNum];
+}
+console.log(getRandomList(recipes));
+
+function recipeTemplate(recipe) {
+	return `<figure class="recipe">
+		<img src="images/${recipe.image}" alt="Image of ${recipe.name}" />
+		<figcaption>
+			<ul class="recipe_tags">
+				${recipe.tags.map(tag => `<li>${tag}</li>`).join('')}
+			</ul>
+			<h2><a href="#">${recipe.name}</a></h2>
+			<p class="recipe_ratings">
+				<span
+					class="rating"
+					role="img"
+					aria-label="Rating: ${recipe.rating} out of 5 stars">
+					${'⭐'.repeat(Math.round(recipe.rating))}${'☆'.repeat(5 - Math.round(recipe.rating))}
+				</span>
+			</p>
+			<p class="recipe_description">${recipe.description}</p>
+		</figcaption>
+	</figure>`;
+}
+
+const recipe = getRandomList(recipes);
+console.log(recipeTemplate(recipe));
+
+function renderRecipes(recipeList) {
+	const recipesOutput = document.getElementById("recipesOutput");
+	const recipesData = recipeList.map(recipe => recipeTemplate(recipe)).join('') ;
+	recipesOutput.innerHTML = recipesData;
+}
+
+function init() {
+  // get a random recipe
+  const recipe = getRandomList(recipes)
+  // render the recipe with renderRecipes.
+  renderRecipes([recipe]);
+}
+init();
+
+function filterRecipes(query) {
+  const filtered = recipes.filter(recipe => {
+    const inName = recipe.name.toLowerCase().includes(query);
+    const inDescription = recipe.description.toLowerCase().includes(query);
+    const inTags = recipe.tags.some(tag => tag.toLowerCase().includes(query));
+    const inIngredients = recipe.recipeIngredient.some(ingredient =>
+      ingredient.toLowerCase().includes(query)
+    );
+    return inName || inDescription || inTags || inIngredients;
+  });
+  return filtered;
+}
+
+function searchHandler(e) {
+  e.preventDefault();
+  const input = document.querySelector("#searchInput");
+  const query = input.value.toLowerCase().trim();
+  if (!query) {
+    const randomRecipe = getRandomList(recipes);
+    renderRecipes([randomRecipe]);
+    return;
+  }
+
+  // Otherwise filter and show matching recipes
+  const results = filterRecipes(query);
+
+  // If no recipes found, show a message
+  if (results.length === 0) {
+    document.querySelector("#recipesOutput").innerHTML =
+      `<p>No recipes found for "${query}".</p>`;
+  } else {
+    renderRecipes(results);
+  }
+}
+
+document.querySelector("#searchForm").addEventListener("submit", searchHandler);
+

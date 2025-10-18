@@ -9,8 +9,8 @@
     <meta property="og:title" content="Delicious food">
     <meta property="og:type" content="Recipe Book" />
     <meta property="og:description" content="Providing delicious recipes for all">
-    <meta property="og:image" content="URL to an image">
-    <meta property="og:url" content="URL of the page">
+    <meta property="og:image" content="https://aliciadransfield.github.io/WDD-131/recipes/images/apple-crisp.jpg">
+    <meta property="og:url" content="https://aliciadransfield.github.io/WDD-131/recipes/index.html">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="recipes.css"/>
     <script src="recipes.js" defer></script>
@@ -26,42 +26,21 @@
             <input type="search" id="searchInput" name="search" placeholder="Search recipes" aria-label="Search recipes"/>
             
             <button type="submit" aria-label="Search">
-                <img src="images/search.svg" alt="Magnifying Glass Search Button" area-hidden="true">
+                <img src="images/search.svg" alt="Magnifying Glass Search Button" aria-hidden="true">
             </button>
         </form>
 
         <section id="recipesOutput" class="recipes" aria-live="polite">
-                    <figure class="recipe">
-                <img src="images/apple-crisp.jpg" alt="Apple crisp on a plate" />
-                <section class="recipeInfo">
-                    <ul class="recipe_tags"><li>Dessert</li></ul>
-                    <h2><a href="#">Apple Crisp</a></h2>
-                    <p class="recipe_ratings" aria-hidden="true">
-                        <span
-                    class="rating"
-                    role="img"
-                    aria-label="Rating: 4 out of 5 stars"
-                >
-                        <span aria-hidden="true" class="icon-star">⭐</span>
-                        <span aria-hidden="true" class="icon-star">⭐</span>
-                        <span aria-hidden="true" class="icon-star">⭐</span>
-                        <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                        <span aria-hidden="true" class="icon-star-empty">☆</span>
-                    </span>
-                    </p>
-                    <p class="recipe_description">This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.</p>
-                </section>
-            </figure>
         </section>
     </main>
     <footer>
+        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
         <div class="social">
             <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
             <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
             <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
             <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
         </div>
-        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
     </footer>
 </body>
 </html>
