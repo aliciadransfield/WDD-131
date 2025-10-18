@@ -16,6 +16,7 @@ header{
     justify-content: center;
     padding: 2rem 0;
     text-align: center;
+    max-width: 100%;
 }
 header img {
     width: 100px;
@@ -23,7 +24,7 @@ header img {
 }
 h1 {
     font-family: var(--secondary-font);
-    font-size: 3rem;
+    font-size: 2rem;
     margin: 3rem 0 0;
 }
 
@@ -40,6 +41,7 @@ h1 {
 
 .search input{
     flex: 1;
+    justify-self: center;
     border: none;
     padding: 0.8rem;
     font-size: 1rem;
@@ -61,7 +63,9 @@ button img {
 
 .recipes {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-self: center;
+    max-width: 100%
 }
 
 .recipe {
@@ -72,6 +76,7 @@ button img {
     text-align: left;
     background: #fff;
     padding: 1.3rem;
+    margin: auto;
 }
 
 img {
@@ -145,7 +150,6 @@ footer img {
 
   .recipe {
     display: flex;
-    flex-direction: row;
     align-items: flex-start;
     gap: 1rem;
     padding: 1rem;
@@ -181,7 +185,6 @@ footer img {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
-    width: 90%;
     margin: auto;
   }
 
