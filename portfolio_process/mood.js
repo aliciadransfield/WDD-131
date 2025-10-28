@@ -1,7 +1,7 @@
 const inspiration = [
     {
         name: "Alice in wonderland book cover",
-        tags: ['font', 'color palette', ],
+        tags: ['font', 'colorPalette', ],
 		description: 'Cover of Alice in wonderland where Alice is holding the white rabbit with ornamental details along the edges.',
 		image: 'bookCover1',
     },
@@ -25,13 +25,13 @@ const inspiration = [
     },
     {
         name: "The Adventures of Alice in wonderland cat keyhole book cover",
-        tags: ['concept', 'layout', 'color palette'],
+        tags: ['concept', 'layout', 'colorPalette'],
 		description: 'Cover of Alice in wonderland with a keyhole and the Cheshire cat is at the top of the hole and the forest is below him.',
 		image: 'bookCover5',
     },
     {
-        name: "Color palette",
-        tags: ['color palette'],
+        name: "Color Palette",
+        tags: ['colorPalette'],
 		description: 'Color palette inspiration',
 		image: 'colorPalette',
     },
@@ -55,7 +55,7 @@ const inspiration = [
     },
     {
         name: "Coraline Poster",
-        tags: ['layout', 'color palette', 'imagery'],
+        tags: ['layout', 'colorPalette', 'imagery'],
 		description: 'Coraline running outside and in a puddle is a reflection of a more colorful world',
 		image: 'layout3',
     },
@@ -140,7 +140,7 @@ const inspiration = [
     {
         name: "Fahrenheit 451",
         tags: ['typography', 'imagery', 'concept'],
-		description: "Quotes from the book about burning creating a fire.",
+		description: "Quotes from the Fahrenheit 451 about burning creating a fire.",
 		image: 'typography10',
     },
     {
@@ -179,10 +179,10 @@ function shuffleArray(array) {
 }
 
 function imageTemplate(inspo) {
-	return`<section class="inspo-img">
-		<img src="images/${inspo.image}.png" alt="${inspiration.description}" fetchpriority="high"/>
-		<p class="image-title">${inspo.name}</p> 
-	</section>`;
+    return `<section class="inspo-img" data-tags="${inspo.tags.join(' ')}">
+        <img src="images/${inspo.image}.png" alt="${inspo.description}" fetchpriority="high"/>
+        <p class="image-title">${inspo.name}</p> 
+    </section>`;
 }
 
 
@@ -193,3 +193,55 @@ function renderImages(inspirationList) {
 }
 
 renderImages(shuffleArray(inspiration));
+
+const filterOptions = document.getElementById("filter-options");
+const filterButton = document.querySelector(".galleryFilter button");
+
+filterButton.addEventListener("click", filterItems);
+
+function filterItems() {
+    const selectedTags = Array.from(
+        filterOptions.querySelectorAll('input[type="checkbox"]:checked')
+    ).map((checkbox) => checkbox.value);
+
+    const images = document.querySelectorAll(".inspo-img");
+
+    images.forEach(img => {
+        const itemTags = (img.dataset.tags || "").split(" ");
+
+        const show =
+            selectedTags.length === 0 ||
+            selectedTags.some(tag => itemTags.includes(tag));
+
+        img.style.display = show ? "inline-block" : "none";
+    });
+}
+
+filterItems();
+
+function handleResize() {
+  if (window.innerWidth > 1000) {
+    menu.classList.remove("hide");
+  } else {
+    menu.classList.add("hide");
+  }
+}
+handleResize();
+window.addEventListener("resize", handleResize);
+
+function viewHandler(event) {
+  const clicked = event.target;
+  if (clicked.tagName !== "IMG") return;
+
+  document.body.insertAdjacentHTML("afterbegin", viewerTemplate);
+
+  document.querySelector(".close-viewer")
+    .addEventListener("click", closeViewer);
+}
+
+function closeViewer() {
+  const viewer = document.querySelector(".viewer");
+  viewer.remove();
+}
+
+document.querySelector(".gallery").addEventListener("click", viewHandler);

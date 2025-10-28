@@ -150,6 +150,39 @@ p {
   display: block;
 }
 
+.galleryFilter {
+  width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+#filter-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.galleryFilter label {
+  font-family: var(--paragraph-font);
+  font-size: 1rem;
+}
+
+.galleryFilter button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.galleryFilter button:hover {
+  background-color: var(--accent1-color);
+}
+
 footer {
   display: flex;
   align-items: center;
