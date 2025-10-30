@@ -217,31 +217,3 @@ function filterItems() {
 }
 
 filterItems();
-
-/* function handleResize() {
-  if (window.innerWidth > 1000) {
-    menu.classList.remove("hide");
-  } else {
-    menu.classList.add("hide");
-  }
-}
-handleResize();
-window.addEventListener("resize", handleResize);
-
-function viewHandler(event) {
-  const clicked = event.target;
-  if (clicked.tagName !== "IMG") return;
-
-  document.body.insertAdjacentHTML("afterbegin", viewerTemplate);
-
-  document.querySelector(".close-viewer")
-    .addEventListener("click", closeViewer);
-}
-
-function closeViewer() {
-  const viewer = document.querySelector(".viewer");
-  viewer.remove();
-}
-
-document.querySelector(".gallery").addEventListener("click", viewHandler);
- */
