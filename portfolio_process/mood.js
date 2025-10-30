@@ -200,26 +200,25 @@ const filterButton = document.querySelector(".galleryFilter button");
 filterButton.addEventListener("click", filterItems);
 
 function filterItems() {
-    const selectedTags = Array.from(
-        filterOptions.querySelectorAll('input[type="checkbox"]:checked')
-    ).map((checkbox) => checkbox.value);
+  const selectedTags = Array.from(
+    filterOptions.querySelectorAll('input[type="checkbox"]:checked')
+  ).map((checkbox) => checkbox.value);
 
-    const images = document.querySelectorAll(".inspo-img");
+  const images = document.querySelectorAll(".inspo-img");
 
-    images.forEach(img => {
-        const itemTags = (img.dataset.tags || "").split(" ");
-
-        const show =
-            selectedTags.length === 0 ||
-            selectedTags.some(tag => itemTags.includes(tag));
-
-        img.style.display = show ? "inline-block" : "none";
-    });
+  images.forEach(img => {
+    const itemTags = (img.dataset.tags || "").split(" ");
+    const show =
+      selectedTags.length === 0 ||
+      selectedTags.some(tag => itemTags.includes(tag));
+    
+    img.style.display = show ? "block" : "none";
+  });
 }
 
 filterItems();
 
-function handleResize() {
+/* function handleResize() {
   if (window.innerWidth > 1000) {
     menu.classList.remove("hide");
   } else {
@@ -245,3 +244,4 @@ function closeViewer() {
 }
 
 document.querySelector(".gallery").addEventListener("click", viewHandler);
+ */
