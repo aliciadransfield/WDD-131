@@ -150,6 +150,10 @@ nav a:hover {
   display: block;
 }
 
+.image-title {
+  margin: 0 18 0 0;
+}
+
 .galleryFilter {
   width: 90%;
   margin: 2rem auto;
@@ -173,7 +177,7 @@ nav a:hover {
   padding: 0.5rem 1rem;
   border: none;
   background-color: var(--primary-color);
-  color: white;
+  color: var(--accent2-color);
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.25s ease;
